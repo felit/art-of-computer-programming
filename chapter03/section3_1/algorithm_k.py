@@ -4,6 +4,7 @@ def k1(x):
     y = x / (10 ** 9)
     for i in range(0, y + 1):
         x = k2(x)
+        print 'y = %s' % i
         # print x
 
 
@@ -61,7 +62,7 @@ def k5(x):
 
 
 def k6(x):
-    if x < (10 ** 7):
+    if x < (10 ** 8):
         x = x + 9814055677
     else:
         x = 10 ** 10 - x
