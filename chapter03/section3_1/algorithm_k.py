@@ -4,30 +4,41 @@ def k1(x):
     y = x / (10 ** 9)
     for i in range(0, y + 1):
         x = k2(x)
-        print x
+        # print x
 
 
 def k2(x):
     z = x / (10 ** 8) % 10
-    x = k3(x)
-    if z > 1:
+    if z <= 0:
+        x = k3(x)
+        print x
+    if z <= 1:
         x = k4(x)
-    if z > 2:
+        print x
+    if z <= 2:
         x = k5(x)
-    if z > 3:
+        print x
+    if z <= 3:
         x = k6(x)
-    if z > 4:
+        print x
+    if z <= 4:
         x = k7(x)
-    if z > 5:
+        print x
+    if z <= 5:
         x = k8(x)
-    if z > 6:
+        print x
+    if z <= 6:
         x = k9(x)
-    if z > 7:
+        print x
+    if z <= 7:
         x = k10(x)
-    if z > 8:
+        print x
+    if z <= 8:
         x = k11(x)
-    if z > 9:
+        print x
+    if z <= 9:
         x = k12(x)
+        print x
     return x
 
 
@@ -45,8 +56,7 @@ def k4(x):
 
 
 def k5(x):
-    l = 10 ** len('%s' % x)
-    x = (1001001001 * (10 ** l) + x) / (10 ** 10)
+    x = (1001001001 * x) % (10 ** 10)
     return x
 
 
@@ -72,7 +82,7 @@ def k9(x):
     for i in range(1, len('%s' % x) + 1):
         n = x % (10 ** i) / (10 ** (i - 1))
         result += ((n - 1) * (10 ** i)) if n != 0 else 0
-    return result
+    return result/10
 
 
 def k10(x):
@@ -96,5 +106,7 @@ def k12(x):
 
 
 if __name__ == '__main__':
+    # k1(6065038420)
     k1(6065038420)
+    # k1(1)
     # print len('%s' % 6065038420)
