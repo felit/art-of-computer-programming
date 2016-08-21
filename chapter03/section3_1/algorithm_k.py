@@ -82,7 +82,7 @@ def k9(x):
     for i in range(1, len('%s' % x) + 1):
         n = x % (10 ** i) / (10 ** (i - 1))
         result += ((n - 1) * (10 ** i)) if n != 0 else 0
-    return result/10
+    return result / 10
 
 
 def k10(x):
@@ -98,11 +98,8 @@ def k11(x):
 
 
 def k12(x):
-    x = x * (x - 1) % (10 ** 10)
+    x = ((x * (x - 1)) / (10 ** 5)) % (10 ** 10)
     return x
-
-# def k13(x):
-
 
 
 if __name__ == '__main__':
